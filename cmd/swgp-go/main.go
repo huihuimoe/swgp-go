@@ -67,7 +67,7 @@ func main() {
 	}
 	defer logger.Sync()
 
-	if err = jsonhelper.LoadAndDecodeDisallowUnknownFields(*confPath, &sc); err != nil {
+	if err = jsonhelper.LoadAndDecode2(*confPath, &sc); err != nil {
 		logger.Fatal("Failed to load config",
 			zap.Stringp("confPath", confPath),
 			zap.Error(err),
